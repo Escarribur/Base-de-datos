@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">
+<span class="label label-info">Lista Medicos</span>
+</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Identificador medico</th>
+      <th>Primer nombre persona</th>
+      <th>Segundo nombre persona</th>
+      <th>Apellido paterno persona</th>
+      <th>Apellido materno persona</th>
+      <th>Fecha de nacimiento</th>
+      <th>Prevision</th>
+      <th>Estado civil</th>
+      <th>Grupo sanguineo</th>
+      <th>Edad</th>
+      <th>Correo</th>
+      <th>Telefono</th>
+      <th>Avenida calle domicilio</th>
+      <th>Numero domicilio</th>
+      <th>Departamento domicilio</th>
+      <th>Comuna domicilio</th>
+      <th>Ciudad domicilio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medicos.each do |medico| %>
+      <tr>
+        <td><%= medico.identificador_medico %></td>
+        <td><%= medico.primer_nombre_persona %></td>
+        <td><%= medico.segundo_nombre_persona %></td>
+        <td><%= medico.apellido_paterno_persona %></td>
+        <td><%= medico.apellido_materno_persona %></td>
+        <td><%= medico.fecha_de_nacimiento %></td>
+        <td><%= medico.prevision %></td>
+        <td><%= medico.estado_civil %></td>
+        <td><%= medico.grupo_sanguineo %></td>
+        <td><%= medico.edad %></td>
+        <td><%= medico.correo %></td>
+        <td><%= medico.telefono %></td>
+        <td><%= medico.avenida_calle_domicilio %></td>
+        <td><%= medico.numero_domicilio %></td>
+        <td><%= medico.departamento_domicilio %></td>
+        <td><%= medico.comuna_domicilio %></td>
+        <td><%= medico.ciudad_domicilio %></td>
+        <td><%= link_to 'Show', medico %></td>
+        <td><%= link_to 'Edit', edit_medico_path(medico) %></td>
+        <td><%= link_to 'Destroy', medico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medico', new_medico_path %>

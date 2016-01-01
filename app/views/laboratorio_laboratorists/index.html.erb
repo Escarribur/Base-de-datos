@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">
+<span class="label label-info">Lista Laboratorio Laboratorists</span>
+</h1>
+
+<table class="table table-bordered" >
+  <thead>
+    <tr>
+      <th>Id laboratorio</th>
+      <th>Rut usuario</th>
+      <th>Hora apertura</th>
+      <th>Hora cierre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @laboratorio_laboratorists.each do |laboratorio_laboratorist| %>
+      <tr>
+        <td><%= laboratorio_laboratorist.id_laboratorio %></td>
+        <td><%= laboratorio_laboratorist.rut_usuario %></td>
+        <td><%= laboratorio_laboratorist.hora_apertura %></td>
+        <td><%= laboratorio_laboratorist.hora_cierre %></td>
+        <td><%= link_to 'Show', laboratorio_laboratorist %></td>
+        <td><%= link_to 'Edit', edit_laboratorio_laboratorist_path(laboratorio_laboratorist) %></td>
+        <td><%= link_to 'Destroy', laboratorio_laboratorist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Laboratorio laboratorist', new_laboratorio_laboratorist_path %>

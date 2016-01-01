@@ -1,0 +1,53 @@
+<%= form_for(@paciente_examn) do |f| %>
+  <% if @paciente_examn.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@paciente_examn.errors.count, "error") %> prohibited this paciente_examn from being saved:</h2>
+
+      <ul>
+      <% @paciente_examn.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_examen %><br>
+    <%= f.number_field :id_examen %>
+  </div>
+  <div class="field">
+    <%= f.label :rut_usuario %><br>
+    <%= f.text_field :rut_usuario %>
+  </div>
+  <div class="field">
+    <%= f.label :med_rut_usuario %><br>
+    <%= f.text_field :med_rut_usuario %>
+  </div>
+  <div class="field">
+    <%= f.label :estado_examen %><br>
+    <%= f.text_field :estado_examen %>
+  </div>
+  <div class="field">
+    <%= f.label :realizado %><br>
+    <%= f.check_box :realizado %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_caducacion_examen %><br>
+    <%= f.date_select :fecha_caducacion_examen %>
+  </div>
+  <div class="field">
+    <%= f.label :hora_caducacion %><br>
+    <%= f.time_select :hora_caducacion %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_realizacion %><br>
+    <%= f.date_select :fecha_realizacion %>
+  </div>
+  <div class="field">
+    <%= f.label :caduco %><br>
+    <%= f.check_box :caduco %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

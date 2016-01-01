@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_examen: 1
+  rut_usuario: 9.99
+  med_rut_usuario: 9.99
+  estado_examen: MyString
+  realizado: false
+  fecha_caducacion_examen: 2015-12-28
+  hora_caducacion: 2015-12-28 17:02:23
+  fecha_realizacion: 2015-12-28
+  caduco: false
+
+two:
+  id_examen: 1
+  rut_usuario: 9.99
+  med_rut_usuario: 9.99
+  estado_examen: MyString
+  realizado: false
+  fecha_caducacion_examen: 2015-12-28
+  hora_caducacion: 2015-12-28 17:02:23
+  fecha_realizacion: 2015-12-28
+  caduco: false

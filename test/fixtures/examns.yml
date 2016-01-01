@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_muestra: 1
+  nombre_examen: MyString
+  descripcion_examen: MyString
+  precio_examen: 
+
+two:
+  id_muestra: 1
+  nombre_examen: MyString
+  descripcion_examen: MyString
+  precio_examen: 

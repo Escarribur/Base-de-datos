@@ -1,0 +1,85 @@
+<%= form_for(@medico) do |f| %>
+  <% if @medico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@medico.errors.count, "error") %> prohibited this medico from being saved:</h2>
+
+      <ul>
+      <% @medico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :identificador_medico %><br>
+    <%= f.text_field :identificador_medico %>
+  </div>
+  <div class="field">
+    <%= f.label :primer_nombre_persona %><br>
+    <%= f.text_field :primer_nombre_persona %>
+  </div>
+  <div class="field">
+    <%= f.label :segundo_nombre_persona %><br>
+    <%= f.text_field :segundo_nombre_persona %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido_paterno_persona %><br>
+    <%= f.text_field :apellido_paterno_persona %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido_materno_persona %><br>
+    <%= f.text_field :apellido_materno_persona %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_de_nacimiento %><br>
+    <%= f.date_select :fecha_de_nacimiento %>
+  </div>
+  <div class="field">
+    <%= f.label :prevision %><br>
+    <%= f.text_field :prevision %>
+  </div>
+  <div class="field">
+    <%= f.label :estado_civil %><br>
+    <%= f.text_field :estado_civil %>
+  </div>
+  <div class="field">
+    <%= f.label :grupo_sanguineo %><br>
+    <%= f.text_field :grupo_sanguineo %>
+  </div>
+  <div class="field">
+    <%= f.label :edad %><br>
+    <%= f.number_field :edad %>
+  </div>
+  <div class="field">
+    <%= f.label :correo %><br>
+    <%= f.text_field :correo %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono %><br>
+    <%= f.text_field :telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :avenida_calle_domicilio %><br>
+    <%= f.text_field :avenida_calle_domicilio %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_domicilio %><br>
+    <%= f.number_field :numero_domicilio %>
+  </div>
+  <div class="field">
+    <%= f.label :departamento_domicilio %><br>
+    <%= f.text_field :departamento_domicilio %>
+  </div>
+  <div class="field">
+    <%= f.label :comuna_domicilio %><br>
+    <%= f.text_field :comuna_domicilio %>
+  </div>
+  <div class="field">
+    <%= f.label :ciudad_domicilio %><br>
+    <%= f.text_field :ciudad_domicilio %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

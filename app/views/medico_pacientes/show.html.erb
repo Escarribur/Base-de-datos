@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rut usuario:</strong>
+  <%= @medico_paciente.rut_usuario %>
+</p>
+
+<p>
+  <strong>Med rut usuario:</strong>
+  <%= @medico_paciente.med_rut_usuario %>
+</p>
+
+<p>
+  <strong>Fecha consulta:</strong>
+  <%= @medico_paciente.fecha_consulta %>
+</p>
+
+<p>
+  <strong>Hora consulta:</strong>
+  <%= @medico_paciente.hora_consulta %>
+</p>
+
+<%= link_to 'Edit', edit_medico_paciente_path(@medico_paciente) %> |
+<%= link_to 'Back', medico_pacientes_path %>

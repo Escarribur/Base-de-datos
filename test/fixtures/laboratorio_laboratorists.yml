@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_laboratorio: 1
+  rut_usuario: 9.99
+  hora_apertura: 2015-12-28 17:01:09
+  hora_cierre: 2015-12-28 17:01:09
+
+two:
+  id_laboratorio: 1
+  rut_usuario: 9.99
+  hora_apertura: 2015-12-28 17:01:09
+  hora_cierre: 2015-12-28 17:01:09

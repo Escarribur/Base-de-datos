@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Identificador paciente:</strong>
+  <%= @paciente.identificador_paciente %>
+</p>
+
+<p>
+  <strong>Primer nombre persona:</strong>
+  <%= @paciente.primer_nombre_persona %>
+</p>
+
+<p>
+  <strong>Segundo nombre persona:</strong>
+  <%= @paciente.segundo_nombre_persona %>
+</p>
+
+<p>
+  <strong>Apellido paterno persona:</strong>
+  <%= @paciente.apellido_paterno_persona %>
+</p>
+
+<p>
+  <strong>Apellido materno persona:</strong>
+  <%= @paciente.apellido_materno_persona %>
+</p>
+
+<p>
+  <strong>Fecha de nacimiento:</strong>
+  <%= @paciente.fecha_de_nacimiento %>
+</p>
+
+<p>
+  <strong>Prevision:</strong>
+  <%= @paciente.prevision %>
+</p>
+
+<p>
+  <strong>Estado civil:</strong>
+  <%= @paciente.estado_civil %>
+</p>
+
+<p>
+  <strong>Grupo sanguineo:</strong>
+  <%= @paciente.grupo_sanguineo %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @paciente.edad %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @paciente.correo %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @paciente.telefono %>
+</p>
+
+<p>
+  <strong>Avenida calle domicilio:</strong>
+  <%= @paciente.avenida_calle_domicilio %>
+</p>
+
+<p>
+  <strong>Numero domicilio:</strong>
+  <%= @paciente.numero_domicilio %>
+</p>
+
+<p>
+  <strong>Departamento domicilio:</strong>
+  <%= @paciente.departamento_domicilio %>
+</p>
+
+<p>
+  <strong>Comuna domicilio:</strong>
+  <%= @paciente.comuna_domicilio %>
+</p>
+
+<p>
+  <strong>Ciudad domicilio:</strong>
+  <%= @paciente.ciudad_domicilio %>
+</p>
+
+<%= link_to 'Edit', edit_paciente_path(@paciente) %> |
+<%= link_to 'Back', pacientes_path %>

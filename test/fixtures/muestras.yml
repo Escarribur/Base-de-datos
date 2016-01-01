@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion_muestra: MyString
+  tipo_muestra: MyString
+  tiempo_muestra: 1
+
+two:
+  descripcion_muestra: MyString
+  tipo_muestra: MyString
+  tiempo_muestra: 1

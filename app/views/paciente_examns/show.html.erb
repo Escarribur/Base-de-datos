@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id examen:</strong>
+  <%= @paciente_examn.id_examen %>
+</p>
+
+<p>
+  <strong>Rut usuario:</strong>
+  <%= @paciente_examn.rut_usuario %>
+</p>
+
+<p>
+  <strong>Med rut usuario:</strong>
+  <%= @paciente_examn.med_rut_usuario %>
+</p>
+
+<p>
+  <strong>Estado examen:</strong>
+  <%= @paciente_examn.estado_examen %>
+</p>
+
+<p>
+  <strong>Realizado:</strong>
+  <%= @paciente_examn.realizado %>
+</p>
+
+<p>
+  <strong>Fecha caducacion examen:</strong>
+  <%= @paciente_examn.fecha_caducacion_examen %>
+</p>
+
+<p>
+  <strong>Hora caducacion:</strong>
+  <%= @paciente_examn.hora_caducacion %>
+</p>
+
+<p>
+  <strong>Fecha realizacion:</strong>
+  <%= @paciente_examn.fecha_realizacion %>
+</p>
+
+<p>
+  <strong>Caduco:</strong>
+  <%= @paciente_examn.caduco %>
+</p>
+
+<%= link_to 'Edit', edit_paciente_examn_path(@paciente_examn) %> |
+<%= link_to 'Back', paciente_examns_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rut_usuario: 9.99
+  med_rut_usuario: 9.99
+  fecha_consulta: 2015-12-28
+  hora_consulta: 2015-12-28 17:01:46
+
+two:
+  rut_usuario: 9.99
+  med_rut_usuario: 9.99
+  fecha_consulta: 2015-12-28
+  hora_consulta: 2015-12-28 17:01:46

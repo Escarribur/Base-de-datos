@@ -1,0 +1,2 @@
+module LaboratorioExamnsHelper
+end

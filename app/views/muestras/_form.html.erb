@@ -1,0 +1,29 @@
+<%= form_for(@muestra) do |f| %>
+  <% if @muestra.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@muestra.errors.count, "error") %> prohibited this muestra from being saved:</h2>
+
+      <ul>
+      <% @muestra.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descripcion_muestra %><br>
+    <%= f.text_field :descripcion_muestra %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_muestra %><br>
+    <%= f.text_field :tipo_muestra %>
+  </div>
+  <div class="field">
+    <%= f.label :tiempo_muestra %><br>
+    <%= f.number_field :tiempo_muestra %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

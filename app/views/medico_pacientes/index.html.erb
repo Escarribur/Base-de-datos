@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">
+<span class="label label-info">Lista Medico Pacientes</span>
+</h1>
+
+<table class="table table-bordered" >
+  <thead>
+    <tr>
+      <th>Rut usuario</th>
+      <th>Med rut usuario</th>
+      <th>Fecha consulta</th>
+      <th>Hora consulta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medico_pacientes.each do |medico_paciente| %>
+      <tr>
+        <td><%= medico_paciente.rut_usuario %></td>
+        <td><%= medico_paciente.med_rut_usuario %></td>
+        <td><%= medico_paciente.fecha_consulta %></td>
+        <td><%= medico_paciente.hora_consulta %></td>
+        <td><%= link_to 'Show', medico_paciente %></td>
+        <td><%= link_to 'Edit', edit_medico_paciente_path(medico_paciente) %></td>
+        <td><%= link_to 'Destroy', medico_paciente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medico paciente', new_medico_paciente_path %>

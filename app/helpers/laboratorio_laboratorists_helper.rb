@@ -1,0 +1,2 @@
+module LaboratorioLaboratoristsHelper
+end

@@ -1,0 +1,1 @@
+json.extract! @paciente_examn, :id, :id_examen, :rut_usuario, :med_rut_usuario, :estado_examen, :realizado, :fecha_caducacion_examen, :hora_caducacion, :fecha_realizacion, :caduco, :created_at, :updated_at

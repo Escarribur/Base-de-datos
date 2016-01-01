@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id laboratorio:</strong>
+  <%= @laboratorio_laboratorist.id_laboratorio %>
+</p>
+
+<p>
+  <strong>Rut usuario:</strong>
+  <%= @laboratorio_laboratorist.rut_usuario %>
+</p>
+
+<p>
+  <strong>Hora apertura:</strong>
+  <%= @laboratorio_laboratorist.hora_apertura %>
+</p>
+
+<p>
+  <strong>Hora cierre:</strong>
+  <%= @laboratorio_laboratorist.hora_cierre %>
+</p>
+
+<%= link_to 'Edit', edit_laboratorio_laboratorist_path(@laboratorio_laboratorist) %> |
+<%= link_to 'Back', laboratorio_laboratorists_path %>

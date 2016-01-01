@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">
+<span class="label label-info">Lista Laboratorists</span>
+</h1>
+
+<table class="table table-bordered" >
+  <thead>
+    <tr>
+      <th>Identificador laboratorista</th>
+      <th>Primer nombre persona</th>
+      <th>Segundo nombre persona</th>
+      <th>Apellido paterno persona</th>
+      <th>Apellido materno persona</th>
+      <th>Fecha de nacimiento</th>
+      <th>Prevision</th>
+      <th>Estado civil</th>
+      <th>Grupo sanguineo</th>
+      <th>Edad</th>
+      <th>Correo</th>
+      <th>Telefono</th>
+      <th>Avenida calle domicilio</th>
+      <th>Numero domicilio</th>
+      <th>Departamento domicilio</th>
+      <th>Comuna domicilio</th>
+      <th>Ciudad domicilio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @laboratorists.each do |laboratorist| %>
+      <tr>
+        <td><%= laboratorist.identificador_laboratorista %></td>
+        <td><%= laboratorist.primer_nombre_persona %></td>
+        <td><%= laboratorist.segundo_nombre_persona %></td>
+        <td><%= laboratorist.apellido_paterno_persona %></td>
+        <td><%= laboratorist.apellido_materno_persona %></td>
+        <td><%= laboratorist.fecha_de_nacimiento %></td>
+        <td><%= laboratorist.prevision %></td>
+        <td><%= laboratorist.estado_civil %></td>
+        <td><%= laboratorist.grupo_sanguineo %></td>
+        <td><%= laboratorist.edad %></td>
+        <td><%= laboratorist.correo %></td>
+        <td><%= laboratorist.telefono %></td>
+        <td><%= laboratorist.avenida_calle_domicilio %></td>
+        <td><%= laboratorist.numero_domicilio %></td>
+        <td><%= laboratorist.departamento_domicilio %></td>
+        <td><%= laboratorist.comuna_domicilio %></td>
+        <td><%= laboratorist.ciudad_domicilio %></td>
+        <td><%= link_to 'Show', laboratorist %></td>
+        <td><%= link_to 'Edit', edit_laboratorist_path(laboratorist) %></td>
+        <td><%= link_to 'Destroy', laboratorist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Laboratorist', new_laboratorist_path %>

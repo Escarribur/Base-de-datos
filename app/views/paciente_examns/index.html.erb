@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">
+<span class="label label-info">Lista Paciente Examns</span>
+</h1>
+
+<table class="table table-bordered" >
+  <thead>
+    <tr>
+      <th>Id examen</th>
+      <th>Rut usuario</th>
+      <th>Med rut usuario</th>
+      <th>Estado examen</th>
+      <th>Realizado</th>
+      <th>Fecha caducacion examen</th>
+      <th>Hora caducacion</th>
+      <th>Fecha realizacion</th>
+      <th>Caduco</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paciente_examns.each do |paciente_examn| %>
+      <tr>
+        <td><%= paciente_examn.id_examen %></td>
+        <td><%= paciente_examn.rut_usuario %></td>
+        <td><%= paciente_examn.med_rut_usuario %></td>
+        <td><%= paciente_examn.estado_examen %></td>
+        <td><%= paciente_examn.realizado %></td>
+        <td><%= paciente_examn.fecha_caducacion_examen %></td>
+        <td><%= paciente_examn.hora_caducacion %></td>
+        <td><%= paciente_examn.fecha_realizacion %></td>
+        <td><%= paciente_examn.caduco %></td>
+        <td><%= link_to 'Show', paciente_examn %></td>
+        <td><%= link_to 'Edit', edit_paciente_examn_path(paciente_examn) %></td>
+        <td><%= link_to 'Destroy', paciente_examn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Paciente examn', new_paciente_examn_path %>

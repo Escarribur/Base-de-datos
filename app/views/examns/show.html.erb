@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id muestra:</strong>
+  <%= @examn.id_muestra %>
+</p>
+
+<p>
+  <strong>Nombre examen:</strong>
+  <%= @examn.nombre_examen %>
+</p>
+
+<p>
+  <strong>Descripcion examen:</strong>
+  <%= @examn.descripcion_examen %>
+</p>
+
+<p>
+  <strong>Precio examen:</strong>
+  <%= @examn.precio_examen %>
+</p>
+
+<%= link_to 'Edit', edit_examn_path(@examn) %> |
+<%= link_to 'Back', examns_path %>

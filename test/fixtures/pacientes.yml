@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  identificador_paciente: MyString
+  primer_nombre_persona: MyString
+  segundo_nombre_persona: MyString
+  apellido_paterno_persona: MyString
+  apellido_materno_persona: MyString
+  fecha_de_nacimiento: 2015-12-28
+  prevision: MyString
+  estado_civil: MyString
+  grupo_sanguineo: MyString
+  edad: 1
+  correo: MyString
+  telefono: MyString
+  avenida_calle_domicilio: MyString
+  numero_domicilio: 1
+  departamento_domicilio: MyString
+  comuna_domicilio: MyString
+  ciudad_domicilio: MyString
+
+two:
+  identificador_paciente: MyString
+  primer_nombre_persona: MyString
+  segundo_nombre_persona: MyString
+  apellido_paterno_persona: MyString
+  apellido_materno_persona: MyString
+  fecha_de_nacimiento: 2015-12-28
+  prevision: MyString
+  estado_civil: MyString
+  grupo_sanguineo: MyString
+  edad: 1
+  correo: MyString
+  telefono: MyString
+  avenida_calle_domicilio: MyString
+  numero_domicilio: 1
+  departamento_domicilio: MyString
+  comuna_domicilio: MyString
+  ciudad_domicilio: MyString

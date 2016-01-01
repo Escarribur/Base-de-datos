@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descripcion muestra:</strong>
+  <%= @muestra.descripcion_muestra %>
+</p>
+
+<p>
+  <strong>Tipo muestra:</strong>
+  <%= @muestra.tipo_muestra %>
+</p>
+
+<p>
+  <strong>Tiempo muestra:</strong>
+  <%= @muestra.tiempo_muestra %>
+</p>
+
+<%= link_to 'Edit', edit_muestra_path(@muestra) %> |
+<%= link_to 'Back', muestras_path %>

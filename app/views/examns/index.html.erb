@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">
+<span class="label label-info">Lista Examns</span>
+</h1>
+
+<table class="table table-bordered" >
+  <thead>
+    <tr>
+      <th>Id muestra</th>
+      <th>Nombre examen</th>
+      <th>Descripcion examen</th>
+      <th>Precio examen</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @examns.each do |examn| %>
+      <tr>
+        <td><%= examn.id_muestra %></td>
+        <td><%= examn.nombre_examen %></td>
+        <td><%= examn.descripcion_examen %></td>
+        <td><%= examn.precio_examen %></td>
+        <td><%= link_to 'Show', examn %></td>
+        <td><%= link_to 'Edit', edit_examn_path(examn) %></td>
+        <td><%= link_to 'Destroy', examn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Examn', new_examn_path %>
