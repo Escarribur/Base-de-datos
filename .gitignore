@@ -13,4 +13,4 @@
 /tmp
 
 #configuracion
-/config/database.yml
+/config/.yml
