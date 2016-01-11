@@ -11,10 +11,86 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160111002807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cambios_laboratorists", id: false, force: :cascade do |t|
+    t.datetime "timestamp_",                              default: "now()"
+    t.text     "comando"
+    t.decimal  "rut_usuario",                                               null: false
+    t.string   "identificador_laboratorista", limit: 4,                     null: false
+    t.string   "primer_nombre_persona",       limit: 20
+    t.string   "segundo_nombre_persona",      limit: 20
+    t.string   "apellido_paterno_persona",    limit: 20
+    t.string   "apellido_materno_persona",    limit: 20
+    t.date     "fecha_de_nacimiento"
+    t.string   "prevision",                   limit: 20
+    t.string   "estado_civil",                limit: 20
+    t.string   "grupo_sanguineo",             limit: 4
+    t.integer  "edad"
+    t.string   "correo",                      limit: 100
+    t.string   "telefono",                    limit: 12
+    t.string   "avenida_calle_domicilio",     limit: 40
+    t.integer  "numero_domicilio"
+    t.string   "departamento_domicilio",      limit: 3
+    t.string   "comuna_domicilio",            limit: 20
+    t.string   "ciudad_domicilio",            limit: 20
+  end
+
+  create_table "cambios_medico", id: false, force: :cascade do |t|
+    t.datetime "timestamp_",                           default: "now()"
+    t.text     "comando"
+    t.decimal  "rut_usuario",                                            null: false
+    t.string   "identificador_medico",     limit: 4,                     null: false
+    t.string   "primer_nombre_persona",    limit: 20
+    t.string   "segundo_nombre_persona",   limit: 20
+    t.string   "apellido_paterno_persona", limit: 20
+    t.string   "apellido_materno_persona", limit: 20
+    t.date     "fecha_de_nacimiento"
+    t.string   "prevision",                limit: 20
+    t.string   "estado_civil",             limit: 20
+    t.string   "grupo_sanguineo",          limit: 4
+    t.integer  "edad"
+    t.string   "correo",                   limit: 100
+    t.string   "telefono",                 limit: 12
+    t.string   "avenida_calle_domicilio",  limit: 40
+    t.integer  "numero_domicilio"
+    t.string   "departamento_domicilio",   limit: 3
+    t.string   "comuna_domicilio",         limit: 20
+    t.string   "ciudad_domicilio",         limit: 20
+  end
+
+  create_table "cambios_paciente", id: false, force: :cascade do |t|
+    t.datetime "timestamp_",                           default: "now()"
+    t.text     "comando"
+    t.decimal  "rut_usuario",                                            null: false
+    t.string   "identificador_paciente",   limit: 4,                     null: false
+    t.string   "primer_nombre_persona",    limit: 20
+    t.string   "segundo_nombre_persona",   limit: 20
+    t.string   "apellido_paterno_persona", limit: 20
+    t.string   "apellido_materno_persona", limit: 20
+    t.date     "fecha_de_nacimiento"
+    t.string   "prevision",                limit: 20
+    t.string   "estado_civil",             limit: 20
+    t.string   "grupo_sanguineo",          limit: 4
+    t.integer  "edad"
+    t.string   "correo",                   limit: 100
+    t.string   "telefono",                 limit: 12
+    t.string   "avenida_calle_domicilio",  limit: 40
+    t.integer  "numero_domicilio"
+    t.string   "departamento_domicilio",   limit: 3
+    t.string   "comuna_domicilio",         limit: 20
+    t.string   "ciudad_domicilio",         limit: 20
+  end
+
+  create_table "cambios_sede", id: false, force: :cascade do |t|
+    t.datetime "timestamp_",             default: "now()"
+    t.text     "comando"
+    t.integer  "id_sede",                                  null: false
+    t.string   "nombre_sede", limit: 50
+  end
 
   create_table "examns", primary_key: "id_examen", force: :cascade do |t|
     t.integer "id_muestra",                               null: false
@@ -36,10 +112,10 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "laboratorio_examns", ["id_laboratorio_examen"], name: "laboratorio_examns_pk", unique: true, using: :btree
 
   create_table "laboratorio_laboratorists", primary_key: "id_laboratorio_laborista", force: :cascade do |t|
-    t.integer "id_laboratorio"
+    t.integer "id_laboratorio", null: false
     t.decimal "rut_usuario",    null: false
-    t.time    "hora_apertura"
-    t.time    "hora_cierre"
+    t.time    "hora_apertura",  null: false
+    t.time    "hora_cierre",    null: false
   end
 
   add_index "laboratorio_laboratorists", ["id_laboratorio"], name: "se_trabaja_fk", using: :btree
@@ -75,13 +151,14 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "ciudad_domicilio",            limit: 20
   end
 
+  add_index "laboratorists", ["identificador_laboratorista"], name: "laboratorists_identificador_laboratorista_key", unique: true, using: :btree
   add_index "laboratorists", ["rut_usuario"], name: "laboratorists_pk", unique: true, using: :btree
 
   create_table "medico_pacientes", primary_key: "id_medico_paciente", force: :cascade do |t|
-    t.decimal "rut_usuario"
+    t.decimal "rut_usuario",     null: false
     t.decimal "med_rut_usuario", null: false
-    t.date    "fecha_consulta"
-    t.time    "hora_consulta"
+    t.date    "fecha_consulta",  null: false
+    t.time    "hora_consulta",   null: false
   end
 
   add_index "medico_pacientes", ["id_medico_paciente"], name: "medico_pacientes_pk", unique: true, using: :btree
@@ -108,24 +185,25 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "ciudad_domicilio",         limit: 20
   end
 
+  add_index "medicos", ["identificador_medico"], name: "medicos_identificador_medico_key", unique: true, using: :btree
   add_index "medicos", ["rut_usuario"], name: "medicos_pk", unique: true, using: :btree
 
   create_table "muestras", primary_key: "id_muestra", force: :cascade do |t|
-    t.string  "descripcion_muestra", limit: 400
-    t.string  "tipo_muestra",        limit: 15
-    t.integer "tiempo_muestra"
+    t.string  "descripcion_muestra", limit: 400, null: false
+    t.string  "tipo_muestra",        limit: 15,  null: false
+    t.integer "tiempo_muestra",                  null: false
   end
 
   add_index "muestras", ["id_muestra"], name: "muestras_pk", unique: true, using: :btree
 
   create_table "paciente_examns", primary_key: "id_paciente_examen", force: :cascade do |t|
-    t.integer "id_examen"
+    t.integer "id_examen",                          null: false
     t.decimal "rut_usuario",                        null: false
     t.decimal "med_rut_usuario",                    null: false
     t.string  "estado_examen",           limit: 12
     t.boolean "realizado"
-    t.date    "fecha_caducacion_examen"
-    t.time    "hora_caducacion"
+    t.date    "fecha_caducacion_examen",            null: false
+    t.time    "hora_caducacion",                    null: false
     t.date    "fecha_realizacion"
     t.boolean "caduco"
   end
@@ -155,10 +233,11 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "ciudad_domicilio",         limit: 20
   end
 
+  add_index "pacientes", ["identificador_paciente"], name: "pacientes_identificador_paciente_key", unique: true, using: :btree
   add_index "pacientes", ["rut_usuario"], name: "pacientes_pk", unique: true, using: :btree
 
   create_table "resultado_examns", primary_key: "id_resultado_examen", force: :cascade do |t|
-    t.integer "id_paciente_examen"
+    t.integer "id_paciente_examen",                null: false
     t.decimal "rut_usuario",                       null: false
     t.string  "descripcion_resultado", limit: 200
   end
@@ -172,6 +251,30 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   add_index "sedes", ["id_sede"], name: "sedes_pk", unique: true, using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.decimal  "rut"
+    t.string   "p_nombre"
+    t.string   "s_nombre"
+    t.string   "apellido_p"
+    t.string   "apellido_m"
+    t.string   "privilegio"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "examns", "muestras", column: "id_muestra", primary_key: "id_muestra", name: "fk_examns_necesita_muestras", on_update: :restrict, on_delete: :restrict
   add_foreign_key "laboratorio_examns", "examns", column: "id_examen", primary_key: "id_examen", name: "fk_laborato_es_realiz_examns", on_update: :restrict, on_delete: :restrict
